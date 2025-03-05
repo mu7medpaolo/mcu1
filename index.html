@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvel Comics</title>
+    <title>Infinity Comics</title>
     <meta name="description" content="Sam Wilson, Captain America (2025)">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
@@ -13,61 +13,30 @@
    <header>
         <div class="logo">
             <a href="index.html">
-            <img src="Marvel_Logo.svg.png" alt="Marvel Logo" >
+                <img src="Marvel_Logo.svg.png" alt="Marvel Logo">
+            </a>
         </div>
         <nav class="nav-links">
             <ul>
-                <li><a href="comics.html">COMICS</a></li>
+                <a href="index.html" class="Home1">Home</a>
+                <a href="comics.html" class="comic2">Comics</a>
             </ul>
         </nav>
     </header>
 
     <div class="new-this-week">
-       
+        <h2>NEWS</h2>
         <div class="news-carousel">
-            <div><img src="captain-america-sot-1-feat.jpeg" alt="News 1"></div>
-            <div><img src="wom2024001_invisiblewoman.jpg" alt="News 2"></div>
-            <div><img src="REDHULK2025001_Cover-2000x1125.jpg" alt="News 3"></div>
-            <div><img src="daredevil__born_again_soundtrack_cover__custom__v4_by_joancarrington14_diyz320-fullview.jpg" alt="News 4"></div>
+            <div><img src="imags comics/captain-america-sot-1-feat.jpeg" alt="News 1"></div>
+            <div><img src="imags comics/wom2024001_invisiblewoman.jpg" alt="News 2"></div>
+            <div><img src="imags comics/REDHULK2025001_Cover-2000x1125.jpg" alt="News 3"></div>
+            <div><img src="imags comics/daredevil__born_again_soundtrack_cover__custom__v4_by_joancarrington14_diyz320-fullview.jpg" alt="News 4"></div>
         </div>
     </div>
     
     <section class="comics-section">
-        <h2>NEW THIS WEEK</h2>
-        <div class="comics-container">
-            
-            <div class="comic">
-                <a href="sam-read.html">
-                    <img src="swcapa2025001_dc11.jpeg" alt="كوميكس 1">
-                </a>
-                <div class="comic-buttons">
-                <a href="sam.html" class="sam">Sam Wilson, Captain America (2025)</a>
-               
-                </div>
-            </div>
-    
-            <div class="comic">
-                
-                <a href="dare-read.html">
-                    <img src="clean.jpg" alt="كوميكس 2" >
-                </a>
-                <h3></h3>
-                <div class="comic-buttons">
-                    <a href="dare.html" class="dare">DAREDEVIL FACSIMILE EDITION(2025)</a>
-                    
-                </div>
-            </div>
-            
-            <div class="comic">
-                <a href="red-read.html">
-                    <img src="clean (1).jpg" alt="كوميكس 3">
-                </a>
-                <div class="comic-buttons">
-                  <a href="red.html" class="red">Red Hulk (2025)</a>
-                </div>
-            </div>
-       
-        </div>
+        
+        <div class="comics-container" id="comicsContainer"></div>
     </section>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -79,6 +48,32 @@
                 autoplaySpeed: 10000, // 10 seconds
                 dots: true,
                 arrows: false
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let comics = [
+                { img: "imags comics/swcapa2025001_dc11.jpeg", title: "Sam Wilson, Captain America (2025)", link: "sam.html" },
+                { img: "imags comics/clean.jpg", title: "Daredevil Facsimile Edition (2025)", link: "dare.html" },
+                { img: "imags comics/clean (1).jpg", title: "Red Hulk (2025)", link: "red.html" }
+            ];
+
+            let container = document.getElementById("comicsContainer");
+
+            comics.forEach(comic => {
+                let comicDiv = document.createElement("div");
+                comicDiv.classList.add("comic");
+
+                comicDiv.innerHTML = `
+                    <a href="${comic.link}">
+                        <img src="${comic.img}" alt="${comic.title}">
+                    </a>
+                    <div class="comic-buttons">
+                        <a href="${comic.link}" class="button">${comic.title}</a>
+                    </div>
+                `;
+
+                container.appendChild(comicDiv);
             });
         });
     </script>

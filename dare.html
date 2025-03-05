@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كومكس - Daredevil</title>
+    <title>Daredevil Facsimile Edition (2025) #1</title>
     <link rel="stylesheet" href="styledare.css">
 </head>
 <body>
@@ -16,14 +16,14 @@
         <nav class="nav-links">
             <ul>
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="comics.html">COMICS</a></li>
+
             </ul>
         </nav>
     </header>
 
     <main class="comic-container">
         <div class="comic-image">
-            <img src="clean.jpg" alt="Daredevil #1">
+            <img src="imags comics/clean.jpg" alt="Daredevil #1">
         </div>
         <div class="comic-details">
             <h1>Daredevil Facsimile Edition (2025) #1</h1>
@@ -34,13 +34,40 @@
 
             <div class="buttons">
                 </div>
-                <a href="Daredevil No. 1 Facsimile Edition 001 (2025) (c2c) (digital) (Marika-Empire).pdf" class="btn">READ ONLINE</a>
+                
                 
                 
                 <a href="Daredevil No. 1 Facsimile Edition 001 (2025) (c2c) (digital) (Marika-Empire).pdf" download class="btn download">Download </a>
             </div>
         </div>
     </main>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let comics = [
+                { img: "images/comics/sw.jpg", title: "Sam Wilson, Captain America (2025)", link: "sam.html" },
+                { img: "images/comics/dd.jpg", title: "Daredevil Facsimile Edition (2025)", link: "dare.html" },
+                { img: "images/comics/red-hulk.jpg", title: "Red Hulk (2025)", link: "red.html" }
+            ];
+    
+            let container = document.querySelector(".comics-container");
+    
+            comics.forEach(comic => {
+                let comicDiv = document.createElement("div");
+                comicDiv.classList.add("comic");
+    
+                comicDiv.innerHTML = `
+                    <a href="${comic.link}">
+                        <img src="${comic.img}" alt="${comic.title}">
+                    </a>
+                    <div class="comic-buttons">
+                        <a href="${comic.link}" class="button">${comic.title}</a>
+                    </div>
+                `;
+    
+                container.appendChild(comicDiv);
+            });
+        });
+    </script>
+    
 </body>
 </html>

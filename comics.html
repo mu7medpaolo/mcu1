@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Comics</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* تحسين الشكل العام */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* الهيدر */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #202020;
+            padding: 15px 20px;
+        }
+
+        .logo img {
+            width: 100px;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links ul li a:hover {
+            color: red;
+        }
+
+        /* قسم الكوميكس */
+        .comics-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .comics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .comic {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .comic:hover {
+            transform: scale(1.05);
+        }
+
+        .comic a img {
+            width: 100%;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .comic-buttons {
+            margin-top: 10px;
+        }
+
+        .button {
+            display: block;
+            text-decoration: none;
+            color: white;
+            background-color: #202020;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: red;
+        }
+
+        /* تصميم متجاوب */
+        @media (max-width: 768px) {
+            .comics-container {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                padding: 10px;
+            }
+
+            .comic {
+                padding: 8px;
+            }
+
+            .button {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Marvel_Logo.svg.png" alt="Marvel Logo">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="comics-section">
+        <h2>All Comics</h2>
+        <div class="comics-container" id="comicsContainer"></div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let comics = [
+                { img: "imags comics/swcapa2025001_dc11.jpeg", title: "Sam Wilson, Captain America (2025)", file: "Sam_Wilson_2025.cbz" },
+                { img: "imags comics/clean.jpg", title: "Daredevil Facsimile Edition (2025)", file: "Daredevil_2025.cbz" },
+                { img: "imags comics/clean (1).jpg", title: "Red Hulk (2025)", file: "Red_Hulk_2025.cbz" },
+                { img: "imags comics/doctor.jpg", title: "Doctor Strange of Asgard (2025) #1", file: "doctor.cbz" },
+                { img: "imags comics/webbllod.jpg", title: "WEB OF SPIDER-VERSE: NEW BLOOD (2025) #1", file: "webbllod.cbz" }, 
+
+                ];
+
+            let container = document.getElementById("comicsContainer");
+
+            comics.forEach(comic => {
+                let comicDiv = document.createElement("div");
+                comicDiv.classList.add("comic");
+
+                comicDiv.innerHTML = `
+                    <a href="${comic.file}" download>
+                        <img src="${comic.img}" alt="${comic.title}">
+                    </a>
+                    <div class="comic-buttons">
+                        <a href="${comic.file}" download class="button">Download ${comic.title}</a>
+                    </div>
+                `;
+
+                container.appendChild(comicDiv);
+            });
+        });
+    </script>
+
+</body>
+</html>
