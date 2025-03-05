@@ -1,0 +1,185 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #202020; 
+    padding: 15px 20px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    width: 120px; 
+    height: auto;
+}
+
+.nav-links {
+    margin-left: auto; 
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-links ul li a:hover {
+    color: red;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        position: static;
+        transform: none;
+    }
+
+    .nav-links ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* تنسيق القسم */
+.comics-section {
+    padding: 50px 20px;
+    text-align: center;
+    color: #202020;
+}
+
+/* تنسيق العنوان */
+.comics-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* تصميم شبكة الكوميكس */
+.comics-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* تصميم كل كوميكس */
+.comic {
+    background: white; 
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.comic img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.comic h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* تأثير عند تمرير الماوس */
+.comic:hover {
+    transform: scale(1.05);
+}
+
+/* تنسيق العنوان "NEW THIS WEEK" */
+.new-this-week {
+    text-align: center;
+    margin: 40px 0; /* إضافة مسافة فوق وتحت العنوان */
+}
+
+.new-this-week h2 {
+    font-size: 32px; /* تكبير الخط */
+    color:#202020 ;
+    font-weight: bold;
+    text-transform: uppercase;
+   
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px; /* حواف ناعمة */
+}
+
+.news-carousel {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.news-carousel img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .news-carousel {
+        max-width: 100%;
+    }
+}
+
+/* تنسيق أزرار الكوميكس */
+.comic-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button {
+    text-decoration: none;
+    color: white;
+    background-color: #202020;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: red;
+}
+.dare{
+    color: #202020;
+    text-decoration: none;
+}
+.sam{
+    color: black;
+    text-decoration: none;
+}
+.red{
+    color: black;
+    text-decoration: none;
+}

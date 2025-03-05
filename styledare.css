@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #202020; 
+    padding: 15px 20px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    width: 120px; 
+    height: auto;
+}
+
+.nav-links {
+    margin-left: auto; 
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-links ul li a:hover {
+    color: red;
+}
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    width: 120px; 
+    height: auto;
+}
+
+
+.nav-links {
+    margin-left: auto; 
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-links ul li a:hover {
+    color: red;
+}
+header {
+    padding: 15px;
+    background: 202020;
+    text-align: left;
+}
+
+header a {
+    color: red;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.comic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+.comic-image img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.comic-details {
+    margin-left: 20px;
+}
+
+.comic-details h1 {
+    font-size: 24px;
+    color: black;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    background: red;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.download {
+    background: #007bff;
+}
+.Published{
+    color: black;
+}
+.WRITER{
+    color: black;
+}
+.Penciller{
+    color: black;
+}
+.bio{
+    color: black;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📖 قراءة الكوميك</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #0d0d0d;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: #111;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 22px;
+            color: red;
+        }
+
+        .back-btn {
+            padding: 10px 15px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #ff3333;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 80%;
+            height: 90%;
+            border: none;
+            background: #222;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <div class="header">
+        <a href="index.html" class="back-btn">🔙 BACK</a>
+        <h1>READ ONLINE  </h1>
+        <div></div> <!-- هذا فارغ فقط لتوسيط العنوان -->
+    </div>
+
+    <!-- منطقة عرض الـ PDF -->
+    <div class="pdf-container">
+        <iframe id="pdf-viewer"></iframe>
+    </div>
+
+    <script>
+        // جلب رابط الـ PDF من الرابط
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfFile = urlParams.get('pdf');
+
+        if (pdfFile) {
+            document.getElementById('pdf-viewer').src = pdfFile;
+        } else {
+            document.querySelector('.pdf-container').innerHTML = "<p class='error-message'>⚠ لم يتم العثور على ملف PDF!</p>";
+        }
+    </script>
+
+</body>
+</html>
